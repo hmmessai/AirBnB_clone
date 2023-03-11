@@ -33,5 +33,6 @@ class HBNBCommand(cmd.Cmd):
     def postloop(self):
         print
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

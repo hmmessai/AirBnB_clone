@@ -13,7 +13,7 @@ class BaseModel:
 
         Args:
             args (any): unused
-            kwargs (dict): Key/Value pairs to be used as attributes for the instance.
+            kwargs (dict): Key/Value pairs attributes of instance.
         """
         tform = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid4())
@@ -33,7 +33,7 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """"Returns the dictionary containing all the key/ value pairs 
+        """"Returns the dictionary containing all the key/ value pairs
         of __dict__ of the instance."""
         newdict = self.__dict__.copy()
         newdict["__class__"] = self.__class__.__name__
@@ -43,5 +43,5 @@ class BaseModel:
 
     def __str__(self):
         """String representation of the BaseModel instance."""
-        return ("[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__))
-
+        clsname = self.__class__.__name__
+        return ("[{}] ({}) {}".format(clsname, self.id, self.__dict__))

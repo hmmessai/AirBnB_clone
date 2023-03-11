@@ -9,7 +9,7 @@ class FileStorage:
 
     Attributes:
         __file_path (str): the location of the file to save the objects in.
-        __objects (dict): dictionary representation of the objects to be stored.
+        __objects (dict): dictionary repn of objects to be stored.
     """
 
     __file_path = "file.json"
@@ -42,4 +42,3 @@ class FileStorage:
                     self.new(eval(clsname)(**o))
         except FileNotFoundError:
             return
-

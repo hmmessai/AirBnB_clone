@@ -34,5 +34,6 @@ class HBNBCommand(cmd.Cmd):
             new.save()
             print(new.id)
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

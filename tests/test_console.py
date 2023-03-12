@@ -4,4 +4,5 @@ import unittest
 
 
 class TestConsole_create(unittest.TestCase):
+    """Tests for the console create module."""
     pass

@@ -4,4 +4,5 @@ import unittest
 
 
 class TestFileStorage_all(unittest.TestCase):
+    """Tests for the FileStorage all method."""
     pass

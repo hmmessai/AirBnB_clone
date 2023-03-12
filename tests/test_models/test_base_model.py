@@ -3,4 +3,5 @@
 import unittest
 
 class TestBaseModel_instantiation(unittest.TestCase):
+    """Tests the BaseModel class for instatiation."""
     pass

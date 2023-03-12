@@ -9,6 +9,10 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     __classes = {"BaseModel"}
 
+    def emptyline(self):
+        """Passes everytime an empty line is encountered."""
+        pass
+
     def do_quit(self, arg):
         """Quit command to exit the program."""
         return True
@@ -21,18 +25,14 @@ class HBNBCommand(cmd.Cmd):
         """Usage: create <class name>
         Create a new <class name> instance.
         """
-        if arg[0]:
+        if len(arg) == 0:
             print("** class name missing **")
-        elif arg[1] not in HBNBCommand.__classes:
+        elif arg not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         else:
             new = eval(arg)()
             new.save()
             print(new.id)
-
-    def postloop(self):
-        print
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
